@@ -1,0 +1,23 @@
+apiVersion: k8s.myappresources.io/v1alpha1
+kind: MyAppResource
+metadata:
+  labels:
+    app.kubernetes.io/name: podinfo
+  #   app.kubernetes.io/instance: myappresource-sample
+  #   app.kubernetes.io/part-of: sample-kubernetes-controller
+  #   app.kubernetes.io/managed-by: kustomize
+  #   app.kubernetes.io/created-by: sample-kubernetes-controller
+  name: podinfo
+spec:
+  replicaCount: 2
+  resources:
+    memoryLimit: 84Mi
+    cpuRequest: 120m
+  image:
+    repository: ghcr.io/stefanprodan/podinfo
+    tag: latest
+  ui:
+    color: "#A58CE9"
+    message: "Hello Team!"
+  redis:
+    enabled: true
