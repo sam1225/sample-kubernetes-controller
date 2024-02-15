@@ -10,7 +10,8 @@ The lifecycle management of this app will be taken care by a CustomResourceDefin
 ## Getting Started
 
 ### Prerequisites
-- go version v1.21.0+
+- go version v1.20.0+
+- docker version 17.03+.
 - kubectl version v1.11.3+.
 - Access to a Kubernetes v1.11.3+ cluster.
 - Need to have **cluster-admin** access on the K8s cluster connected to.
@@ -73,7 +74,7 @@ curl http://localhost:8181/cache/mykey
 ### To Uninstall
 
 ```sh
-kubectl apply -f config/samples/k8s_v1alpha1_myappresource.yaml
-kubectl apply -f config/crd/bases/k8s.myappresources.io_myappresources.yaml
+kubectl delete -f config/samples/k8s_v1alpha1_myappresource.yaml
+kubectl delete -f config/crd/bases/k8s.myappresources.io_myappresources.yaml
 ```
 
